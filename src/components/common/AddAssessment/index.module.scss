@@ -1,0 +1,45 @@
+@import "src/styles/resources";
+
+.wrapper {
+  display: flex;
+  padding: toRem(20) toRem(30);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: toRem(12);
+  align-self: stretch;
+  border-radius: 12px;
+  border: 1px dashed #dadce0;
+  background: #f6f8fa;
+
+  .primary {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+    .text {
+      @include typoGraphy(
+        $fontFamily: $font-family-inter,
+        $fontWeight: 600,
+        $fontSize: 14px,
+        $lineHeight: normal,
+        $letterSpacing: 0px,
+        $color: $text-color
+      );
+    }
+  }
+
+  .secondary {
+    .subText {
+      @include typoGraphy(
+        $fontFamily: $font-family-inter,
+        $fontWeight: 500,
+        $fontSize: 12px,
+        $lineHeight: normal,
+        $letterSpacing: 0px,
+        $color: $text-color
+      );
+    }
+  }
+}
