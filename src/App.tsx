@@ -1,8 +1,11 @@
+import AssessmentCard from "./components/common/AssessmentCard/AssessmentCard";
 
 function App() {
   return (
     <>
-      hello world!
+      {/* <Sidebar activeStep={1} /> */}
+      {/* <UploadDocument /> */}
+      <AssessmentCard />
     </>
   );
 }

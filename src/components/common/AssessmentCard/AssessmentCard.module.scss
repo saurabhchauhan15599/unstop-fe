@@ -1,0 +1,32 @@
+@import "src/styles/resources.scss";
+
+.wrapper {
+  width: 100%;
+  display: flex;
+  padding: toRem(14);
+  flex-direction: column;
+  align-items: flex-start;
+  gap: toRem(10);
+  border-radius: 12px;
+  border: 1px solid #dadce0;
+  background: #fff;
+
+  .primaryWrapper {
+    @include displayFlex(row, flex-start, flex-start, 8px);
+
+    .primary {
+      @include displayFlex(column, flex-start, flex-start, 8px);
+
+      .subWrapper {
+        @include displayFlex(row, space-between, center, 8px);
+
+        .divider {
+          height: 20px;
+        }
+        .schedule {
+          @include displayFlex(row, space-between, center, 8px);
+        }
+      }
+    }
+  }
+}
