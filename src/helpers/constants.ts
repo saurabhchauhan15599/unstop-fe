@@ -17,3 +17,38 @@ export const secondarySideBarContents = [
     status: "Error",
   },
 ];
+
+export const assignmentContents = [
+  {
+    assignmentName: "Math Assessment",
+    assignmentType: "Job",
+    assignmentTime: "20 Apr 23",
+    duration: "00",
+    questions: "00",
+    number: 1,
+  },
+  {
+    assignmentName: "Math Assessment",
+    assignmentType: "Job",
+    assignmentTime: "20 Apr 23",
+    duration: "00",
+    questions: "00",
+    number: 324,
+  },
+  {
+    assignmentName: "Math Assessment",
+    assignmentType: "Job",
+    assignmentTime: "20 Apr 23",
+    duration: "00",
+    questions: "00",
+    number: 324090,
+  },
+  {
+    assignmentName: "Math Assessment",
+    assignmentType: "Job",
+    assignmentTime: "20 Apr 23",
+    duration: "00",
+    questions: "00",
+    number: 2,
+  },
+];

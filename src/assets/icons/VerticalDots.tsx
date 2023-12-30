@@ -1,10 +1,10 @@
 import React from "react";
 import { SVGProps } from "../../helpers/types";
 
-const VerticalDots: React.FC<SVGProps> = ({ ...props }) => {
+const VerticalDots: React.FC<SVGProps> = ({ width = "16", ...props }) => {
   return (
     <svg
-      width="16"
+      width={width}
       height="16"
       viewBox="0 0 16 16"
       fill="none"
