@@ -1,7 +1,7 @@
 @import "src/styles/resources.scss";
 
 .wrapper {
-  width: 100%;
+  min-width: toRem(345);
   display: flex;
   padding: toRem(14);
   flex-direction: column;
@@ -11,22 +11,58 @@
   border: 1px solid #dadce0;
   background: #fff;
 
-  .primaryWrapper {
-    @include displayFlex(row, flex-start, flex-start, 8px);
+  .primaryText {
+    @include typoGraphy(
+      $fontFamily: $font-family-inter,
+      $fontWeight: 600,
+      $fontSize: 14px,
+      $lineHeight: normal,
+      $letterSpacing: 0px,
+      $color: #1C4980
+    );
+  }
 
-    .primary {
-      @include displayFlex(column, flex-start, flex-start, 8px);
+  .secondaryText {
+    @include typoGraphy(
+      $fontFamily: $font-family-inter,
+      $fontWeight: 500,
+      $fontSize: 12px,
+      $lineHeight: normal,
+      $letterSpacing: 0px,
+      $color: #8DA4BF
+    );
+  }
 
-      .subWrapper {
-        @include displayFlex(row, space-between, center, 8px);
+  .subWrapper {
+    width: 100%;
+    @include displayFlex(row, space-between, flex-start, 8px);
 
-        .divider {
-          height: 20px;
-        }
-        .schedule {
+    .primaryWrapper {
+      width: 100%;
+      @include displayFlex(row, flex-start, flex-start, 8px);
+
+      .primary {
+        @include displayFlex(column, flex-start, flex-start, 8px);
+
+        .upper {
           @include displayFlex(row, space-between, center, 8px);
+
+          .divider {
+            height: 20px;
+          }
+          .schedule {
+            @include displayFlex(row, space-between, center, 8px);
+          }
         }
       }
+    }
+  }
+
+  .secondary {
+    @include displayFlex(row, space-between, center, 8px);
+
+    .secondarySubWrapper {
+      @include displayFlex(column, flex-start, flex-start);
     }
   }
 }

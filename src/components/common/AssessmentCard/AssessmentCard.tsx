@@ -12,49 +12,70 @@ import ScheduleIcon from "../../../assets/icons/ScheduleIcon";
 import VerticalDots from "../../../assets/icons/VerticalDots";
 import css from "./AssessmentCard.module.scss";
 
-const AssessmentCard: React.FC = () => {
+interface AssignmentTypes {
+  assignmentName: string;
+  assignmentType: string;
+  assignmentTime: string;
+  duration: string;
+  questions: string;
+  number: number;
+}
+
+const AssessmentCard: React.FC<AssignmentTypes> = ({
+  assignmentName,
+  assignmentTime,
+  assignmentType,
+  duration,
+  questions,
+  number,
+}) => {
   return (
     <div className={css.wrapper}>
       <section className={css.subWrapper}>
         <div className={css.primaryWrapper}>
           <BagIcon />
           <div className={css.primary}>
-            <Typography>Math Assessment</Typography>
-            <div className={css.abc}>
-              <Typography>Job</Typography>
+            <Typography className={css.primaryText}>
+              {assignmentName}
+            </Typography>
+            <div className={css.upper}>
+              <Typography className={css.primaryText}>
+                {assignmentType}
+              </Typography>
               <Divider className={css.divider} />
               <div className={css.schedule}>
                 <ScheduleIcon />
-                <Typography>20 Apr 23</Typography>
+                <Typography className={css.secondaryText}>
+                  {assignmentTime}
+                </Typography>
               </div>
             </div>
           </div>
         </div>
         <VerticalDots />
       </section>
-      <DottedIcon />
+      <DottedIcon width={300} />
       <section className={css.secondary}>
-        <div>
-          <Typography>00</Typography>
-          <Typography>Duration</Typography>
+        <div className={css.secondarySubWrapper}>
+          <Typography className={css.primaryText}>{duration}</Typography>
+          <Typography className={css.primaryText}>Duration</Typography>
         </div>
-        <div>
-          <Typography>00</Typography>
-          <Typography>Questions</Typography>
+        <div className={css.secondarySubWrapper}>
+          <Typography className={css.primaryText}>{questions}</Typography>
+          <Typography className={css.primaryText}>Questions</Typography>
         </div>
         <div>
           <Chip
             label={
-              <>
+              <React.Fragment>
                 <ClipIcon />
-                Share
-              </>
+                <Typography className={css.primaryText}>Share</Typography>
+              </React.Fragment>
             }
           />
         </div>
-        <div>
-          <Avatar src={"LP"} alt={"LP"} />
-        </div>
+        <Avatar src={"LP"} alt={"LP"} />
+        <Typography className={css.primaryText}>+{number}</Typography>
       </section>
     </div>
   );
