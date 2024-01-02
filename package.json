@@ -10,16 +10,21 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@saurabh-chauhan/sc-components-library": "^2.1.3",
+    "@hookform/resolvers": "^3.3.3",
+    "@saurabh-chauhan/sc-components-library": "^2.1.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-hook-form": "^7.49.2",
     "react-router-dom": "^6.21.1",
     "sass": "^1.69.5",
-    "vite-tsconfig-paths": "^4.2.2"
+    "uuid": "^9.0.1",
+    "vite-tsconfig-paths": "^4.2.2",
+    "yup": "^1.3.3"
   },
   "devDependencies": {
     "@types/react": "^18.2.43",
     "@types/react-dom": "^18.2.17",
+    "@types/uuid": "^9.0.7",
     "@typescript-eslint/eslint-plugin": "^6.14.0",
     "@typescript-eslint/parser": "^6.14.0",
     "@vitejs/plugin-react-swc": "^3.5.0",

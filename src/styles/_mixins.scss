@@ -21,13 +21,12 @@
   $letterSpacing: 0px,
   $color: "#000000"
 ) {
-  font-family: $fontFamily;
-  font-style: normal;
+  font-family: $fontFamily !important;
   font-weight: $fontWeight;
   font-size: $fontSize;
   line-height: $lineHeight;
   letter-spacing: $letterSpacing;
-  color: $color;
+  color: $color !important;
 }
 
 @mixin displayFlex(

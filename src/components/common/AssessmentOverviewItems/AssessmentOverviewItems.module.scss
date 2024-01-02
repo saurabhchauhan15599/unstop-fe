@@ -1,0 +1,45 @@
+@import "src/styles/resources.scss";
+
+.wrapper {
+  @include displayFlex(row, flex-start, center, 8px);
+
+  .primaryText {
+    @include typoGraphy($font-family-inter, 700, 20px, 140%, normal, #1c4980);
+  }
+
+  .secondaryText {
+    @include typoGraphy($font-family-inter, 600, 14px, 140%, normal, #1c4980);
+  }
+
+  .tertiaryText {
+    @include typoGraphy($font-family-inter, 500, 12px, 140%, normal, #1c4980);
+  }
+
+  .greenText {
+    @include typoGraphy($font-family-inter, 500, 12px, 140%, normal, #05c165);
+  }
+
+  .divider {
+    height: toRem(40);
+  }
+
+  .primaryWrapper {
+    @include displayFlex(column);
+    min-width: 162px;
+    padding: 16px 20px;
+    gap: 16px;
+    background: #fff;
+
+    .total {
+      @include displayFlex(row, flex-start, flex-start, 8px);
+
+      .column {
+        @include displayFlex(column, flex-start, flex-start, 8px);
+
+        .row {
+          @include displayFlex(row, flex-start, center, 8px);
+        }
+      }
+    }
+  }
+}

@@ -1,28 +1,24 @@
 import React from "react";
 import css from "./AssessmentOverview.module.scss";
-import { Typography } from "@saurabh-chauhan/sc-components-library";
-import DashboardIcon from "../../../assets/icons/DashboardIcon";
+import AssessmentOverviewItems from "../AssessmentOverviewItems/AssessmentOverviewItems";
+import { IAssessmentOverview } from "../../../helpers/types";
 
-const AssessmentOverview: React.FC = () => {
+interface IAssessmentOverviewWrapper {
+  assessmentOverviewData: IAssessmentOverview[];
+}
+
+const AssessmentOverview: React.FC<IAssessmentOverviewWrapper> = ({
+  assessmentOverviewData,
+}) => {
   return (
-    <div className={css.container}>
-      <Typography>Assessments Overview</Typography>
-      <section className={css.wrapper}>
-        <div className={css.primaryWrapper}>
-          <Typography>Total Assessment</Typography>
-          <div className={css.total}>
-            <DashboardIcon />
-            <Typography>34</Typography>
-          </div>
-        </div>
-        <div className={css.primaryWrapper}>
-          <Typography>Total Assessment</Typography>
-          <div className={css.total}>
-            <DashboardIcon />
-            <Typography>34</Typography>
-          </div>
-        </div>
-      </section>
+    <div
+      className={[
+        css.container,
+        assessmentOverviewData.length <= 1 ? css.single : "",
+        assessmentOverviewData.length > 1 ? css.multiple : "",
+      ].join(" ")}
+    >
+      <AssessmentOverviewItems data={assessmentOverviewData} />
     </div>
   );
 };

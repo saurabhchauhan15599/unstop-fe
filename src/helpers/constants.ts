@@ -52,3 +52,22 @@ export const assignmentContents = [
     number: 2,
   },
 ];
+
+export const PURPOSE_DROPDOWN = [
+  { id: 1, label: "Job", value: "Job" },
+  { id: 2, label: "Self", value: "Self" },
+  { id: 3, label: "Others", value: "Others" },
+]
+
+export const ASCII_KEYS = {
+  backspace: 'Backspace',
+  arrowRight: 'ArrowRight',
+  arrowLeft: 'ArrowLeft',
+  arrowUp: 'ArrowUp',
+  arrowDown: 'ArrowDown',
+  space: 'Space',
+  escape: 'Escape',
+  enter: 'Enter',
+};
+
+export const DIGIT_REGEX = new RegExp(/^\d+$/);

@@ -1,20 +1,28 @@
 import React from "react";
+import Dashboard from "./views/Dashboard/Dashboard";
 
 function App() {
   return (
     <React.Fragment>
-      {/* {assignmentContents.map((val) => {
-        return (
-          <AssessmentCard
-            assignmentName={val.assignmentName}
-            assignmentType={val.assignmentType}
-            assignmentTime={val.assignmentTime}
-            duration={val.duration}
-            questions={val.questions}
-            number={val.number}
-          />
-        );
-      })} */}
+      {/* <AssessmentOverview
+        assessmentOverviewData={[
+          {
+            Icon: GlobeRedIcon,
+            title: "Candidates",
+            secondaryCount: 89,
+            primaryCount: 11145,
+            subTitle: "Total Candidates",
+          },
+          {
+            Icon: GlobeRedIcon,
+            title: "Candidates",
+            secondaryCount: 89,
+            primaryCount: 11145,
+            subTitle: "Total Candidates",
+          },
+        ]}
+      /> */}
+      <Dashboard />
     </React.Fragment>
   );
 }

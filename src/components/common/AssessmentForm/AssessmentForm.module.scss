@@ -1,0 +1,20 @@
+@import "src/styles/resources.scss";
+
+.container {
+  width: 100%;
+  @include displayFlex(column, flex-start, flex-start, 8px);
+  @include typoGraphy($font-family-inter, 500, 16px, 100%, 0px, #1c4980);
+
+  .wrapper {
+    width: fit-content;
+    @include displayFlex(column, flex-start, flex-start, 10);
+    align-self: stretch;
+    border-radius: 8px;
+    border: 1px solid #dde5ea;
+
+    .chips {
+      padding: 1rem 0;
+      @include displayFlex(row, flex-start, flex-start, 8px);
+    }
+  }
+}
