@@ -1,0 +1,18 @@
+@import "src/styles/resources.scss";
+
+.container {
+  width: fit-content;
+  @include displayFlex(row, flex-start, center, 8px);
+  min-width: toRem(162);
+  padding: toRem(16) toRem(20);
+  border-radius: toRem(12);
+  border: 1px solid #dadce0;
+
+  &.single {
+    border-radius: 12px 0 12px 0;
+  }
+
+  &.mutiple {
+    border-radius: 0;
+  }
+}
