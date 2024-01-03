@@ -4,6 +4,7 @@ import {
   Chip,
   SelectLabel,
   TextField,
+  Typography,
 } from "@saurabh-chauhan/sc-components-library";
 import { Controller, useFormContext } from "react-hook-form";
 import { v4 } from "uuid";
@@ -19,7 +20,7 @@ interface IAssessment {
 }
 
 const AssessmentForm: React.FC<IAssessment> = ({ skills, setSkills }) => {
-  const { control, setValue: setPurposeValue } = useFormContext();
+  const { control, setValue: setPurposeValue, clearErrors } = useFormContext();
 
   const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
     const target = event.currentTarget as HTMLInputElement;
@@ -57,6 +58,7 @@ const AssessmentForm: React.FC<IAssessment> = ({ skills, setSkills }) => {
             error={fieldState.invalid}
             helperText={fieldState.error?.message}
             endIcon={fieldState.invalid && <AlertErrorIcon />}
+            rootClassName={css.text}
           />
         )}
       />
@@ -66,19 +68,20 @@ const AssessmentForm: React.FC<IAssessment> = ({ skills, setSkills }) => {
         render={({ field, fieldState }) => (
           <SelectLabel
             {...field}
-            value={{
-              label: field.value,
-              value: field.value,
-            }}
+            value={
+              field.value ? { label: field.value, value: field.value } : ""
+            }
             required
             label="Purpose of the test is"
-            placeholder="select"
+            placeholder="Select..."
             options={PURPOSE_DROPDOWN}
-            onChange={(newValue: any) =>
-              setPurposeValue("purpose", newValue.value)
-            }
+            onChange={(newValue: any) => {
+              setPurposeValue("purpose", newValue.value);
+              clearErrors("purpose");
+            }}
             error={fieldState.invalid}
             helperText={fieldState.error?.message}
+            rootClassName={css.text}
           />
         )}
       />
@@ -94,39 +97,31 @@ const AssessmentForm: React.FC<IAssessment> = ({ skills, setSkills }) => {
             error={fieldState.invalid}
             helperText={fieldState.error?.message}
             endIcon={fieldState.invalid && <AlertErrorIcon />}
+            rootClassName={css.text}
           />
         )}
       />
-      <section className={css.wrapper}>
-        <div className={css.chips}>
-          {skills.map((val) => {
-            return (
-              <Chip
-                itemType="Button"
-                label={val.name}
-                key={val.id}
-                showCloseIcon
-                onClose={() => handleClose(val.id)}
-              />
-            );
-          })}
-        </div>
-        <Controller
-          name="skills"
-          control={control}
-          render={({ field, fieldState }) => (
-            <TextField
-              {...field}
-              required
-              label="Skills"
-              placeholder="type"
-              onKeyDown={handleKeyDown}
-              helperText={fieldState.error?.message}
-              endIcon={fieldState.invalid && <AlertErrorIcon />}
-            />
-          )}
-        />
-      </section>
+      <div>
+        <Typography className={css.text}>
+          <span>Skills</span>
+        </Typography>
+        <section className={css.wrapper}>
+          <div className={css.chips}>
+            {skills.map((val) => {
+              return (
+                <Chip
+                  itemType="Button"
+                  label={val.name}
+                  key={val.id}
+                  showCloseIcon
+                  onClose={() => handleClose(val.id)}
+                />
+              );
+            })}
+          </div>
+          <TextField required placeholder="type" onKeyDown={handleKeyDown} />
+        </section>
+      </div>
 
       <Controller
         name="duration"
@@ -140,6 +135,7 @@ const AssessmentForm: React.FC<IAssessment> = ({ skills, setSkills }) => {
             error={fieldState.invalid}
             helperText={fieldState.error?.message}
             endIcon={fieldState.invalid && <AlertErrorIcon />}
+            rootClassName={css.text}
           />
         )}
       />

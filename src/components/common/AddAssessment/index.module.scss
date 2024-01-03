@@ -1,22 +1,20 @@
 @import "src/styles/resources";
 
 .wrapper {
-  display: flex;
+  @include displayFlex(column, center, center, 12px);
   padding: toRem(20) toRem(30);
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: toRem(12);
   align-self: stretch;
   border-radius: 12px;
   border: 1px dashed #dadce0;
   background: #f6f8fa;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $blue-100;
+  }
 
   .primary {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
+    @include displayFlex(column, center, center, 10px);
 
     .text {
       @include typoGraphy(
@@ -32,6 +30,8 @@
 
   .secondary {
     .subText {
+      max-width: 328px;
+      text-align: center;
       @include typoGraphy(
         $fontFamily: $font-family-inter,
         $fontWeight: 500,

@@ -1,0 +1,43 @@
+@import "src/styles/resources.scss";
+
+.container {
+  @include displayFlex(row, flex-start, flex-start, 8px);
+
+  .title {
+    @include typoGraphy($font-family-inter, 600, 20px, null, null, $text-color);
+  }
+
+  .subtitle {
+    @include typoGraphy($font-family-inter, 600, 14px, null, null, #0073e6);
+    border-bottom: 3px solid #0073e6;
+  }
+
+  .heading {
+    @include typoGraphy($font-family-inter, 500, 18px, null, null, $text-color);
+  }
+
+  .divider {
+    height: toRem(25);
+  }
+
+  .primary {
+    .rowWrapper {
+      @include displayFlex(row, flex-start, center, 20px);
+      padding: toRem(10);
+      border-radius: 12px 12px 0px 0px;
+      border-bottom: 1px solid #dde5ea;
+      background: #fff;
+      flex-wrap: wrap;
+    }
+
+    .colWrapper {
+      @include displayFlex(column, flex-start, flex-start, 10px);
+      padding: toRem(10);
+    }
+
+    .assessOverview {
+      @include displayFlex(column, flex-start, flex-start, 16px);
+      padding: toRem(10);
+    }
+  }
+}

@@ -46,3 +46,11 @@
   $remval: calc($val / 16) + rem;
   @return $remval;
 }
+
+@mixin position($position, $top: auto, $left: auto, $bottom: auto, $right: auto) {
+  position: $position;
+  top: $top;
+  left: $left;
+  right: $right;
+  bottom: $bottom;
+}

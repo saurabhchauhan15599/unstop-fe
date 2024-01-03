@@ -3,7 +3,7 @@ export type SVGProps = JSX.IntrinsicElements["svg"];
 export type IIcon = React.FC<React.SVGProps<SVGSVGElement>>;
 
 export interface IAssessmentOverview {
-  title: string;
+  title?: string;
   Icon?: IIcon;
   primaryCount: number;
   secondaryCount?: number;
@@ -11,14 +11,13 @@ export interface IAssessmentOverview {
 }
 
 export interface IAssessmentForm {
-  name: string,
-  purpose: string,
-  description: string,
-  skills: string,
-  duration: string,
+  name: string;
+  purpose: string;
+  description: string;
+  duration: string;
 }
 
 export interface ISkills {
-  name: string
-  id: string
+  name: string;
+  id: string;
 }
