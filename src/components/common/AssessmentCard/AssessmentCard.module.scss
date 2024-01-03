@@ -3,7 +3,7 @@
 .wrapper {
   min-width: toRem(345);
   display: flex;
-  padding: toRem(14);
+  padding: toRem(20) toRem(30);
   flex-direction: column;
   align-items: flex-start;
   gap: toRem(10);
@@ -18,7 +18,7 @@
       $fontSize: 14px,
       $lineHeight: normal,
       $letterSpacing: 0px,
-      $color: #1C4980
+      $color: $text-color
     );
   }
 
@@ -29,7 +29,7 @@
       $fontSize: 12px,
       $lineHeight: normal,
       $letterSpacing: 0px,
-      $color: #8DA4BF
+      $color: #8da4bf
     );
   }
 

@@ -4,15 +4,36 @@
   @include displayFlex(row, flex-start, center, 8px);
 
   .primaryText {
-    @include typoGraphy($font-family-inter, 700, 20px, 140%, normal, #1c4980);
+    @include typoGraphy(
+      $font-family-inter,
+      700,
+      20px,
+      140%,
+      normal,
+      $text-color
+    );
   }
 
   .secondaryText {
-    @include typoGraphy($font-family-inter, 600, 14px, 140%, normal, #1c4980);
+    @include typoGraphy(
+      $font-family-inter,
+      600,
+      14px,
+      140%,
+      normal,
+      $text-color
+    );
   }
 
   .tertiaryText {
-    @include typoGraphy($font-family-inter, 500, 12px, 140%, normal, #1c4980);
+    @include typoGraphy(
+      $font-family-inter,
+      500,
+      12px,
+      140%,
+      normal,
+      $text-color
+    );
   }
 
   .greenText {
@@ -20,7 +41,7 @@
   }
 
   .divider {
-    height: toRem(40);
+    height: toRem(60);
   }
 
   .primaryWrapper {
@@ -34,7 +55,7 @@
       @include displayFlex(row, flex-start, flex-start, 8px);
 
       .column {
-        @include displayFlex(column, flex-start, flex-start, 8px);
+        @include displayFlex(column, space-between, flex-start, 8px);
 
         .row {
           @include displayFlex(row, flex-start, center, 8px);
