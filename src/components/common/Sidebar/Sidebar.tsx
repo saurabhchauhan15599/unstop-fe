@@ -1,5 +1,5 @@
 import React from "react";
-import css from "./sidebar.module.scss";
+import css from "./Sidebar.module.scss";
 import {
   CrossBlackIcon,
   Typography,
